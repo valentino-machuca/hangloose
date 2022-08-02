@@ -1,0 +1,113 @@
+.card{
+    transition: 0.3s;
+    animation: entrance 0.4s;
+    width: 28%;
+    height: 60%;
+    background-color: #9a9a9a0c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 20px;
+    border-radius: 20px;
+    z-index: 10;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+.card .link{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+.card .link .image{
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.card .link .image img{
+    overflow: hidden;
+    width: 400px;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: -10px -5px 21px -10px rgba(0,0,0,0.75);
+}
+
+.card .link .info{
+    width: 100%;
+    padding-left: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.card .link .info .name h4{
+    width: 100%;
+    font-weight: 100;
+    font-size: 16px;
+    color: #fbfbfb;
+    text-shadow: 1px 2px 4px #222222;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card .link .info .genres{
+    width: 100%;
+    font-weight: 200;
+    font-size: 14px;
+    color: #9a9a9a;
+    text-shadow: 1px 2px 4px #222222;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.card .link .info .platforms{
+    padding-top: 10px;
+    width: 100%;
+    font-weight: 200;
+    font-size: 14px;
+    color: #9a9a9a;
+    text-shadow: 1px 2px 4px #222222;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.card .link .info .platforms p{
+    width: auto;
+    padding-right: 10px;
+}
+
+.card .link .info .genres p{
+    padding-right: 5px;
+}
+
+.card:hover{
+    transition: 0.3s;
+    transform: scale(1.02);
+    background-color: #e58f2778;
+    backdrop-filter: blur(0px);
+    cursor: pointer;
+}
+
+  @keyframes entrance {
+    0% {
+        transform: scale(0.7);
+        filter: blur(2px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0px);
+        opacity: 1;
+    }
+  }

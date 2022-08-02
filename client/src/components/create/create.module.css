@@ -1,0 +1,215 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 88vh;
+}
+
+.container .create{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 4px 91px -12px #222222;
+}
+
+.container .create .form{
+    animation: init 2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    width: 40%;
+    height: 90%;
+    backdrop-filter: blur(5px);
+}
+
+.container .create .form h4{
+    width: 100%;
+    text-align: start;
+    color: #fbfbfb;
+    font-weight: 200;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.status{
+    color: #E58E27;
+    font-weight: 200;
+    padding-top: 20px;
+    font-size: 16px;
+}
+
+.container .create .form .inputs{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.container .create .form .inputs .grid{
+    display: flex;
+    width: 100%;
+}
+
+.container .create .form .inputs .grid .input input{
+    width: 80%;
+    padding: 5px;
+    background: #9a9a9a70;
+    color: #e58f27;
+    border-radius: 5px;
+    box-shadow: 4px 6px 20px 1px rgba(0,0,0,0.37);
+}
+
+.container .create .form .inputs .input{
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container .create .form .inputs .inputDescription{
+    margin-bottom: 30px;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container .create .form .inputs .input .error{
+    color: red;
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+.container .create .form .inputs .inputDescription .error{
+    color: red;
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+.container .create .form .inputs .input label{
+    margin-bottom: 10px;
+    color: #9a9a9a;
+    font-weight: 200;
+}
+
+.container .create .form .inputs .inputDescription label{
+    margin-bottom: 10px;
+    color: #9a9a9a;
+    font-weight: 200;
+}
+
+.container .create .form .inputs .input input{
+    width: 90%;
+    padding: 5px;
+    background: #9a9a9a70;
+    color: #e58f27;
+    border-radius: 5px;
+    box-shadow: 4px 6px 20px 1px rgba(0,0,0,0.37);
+}
+
+.container .create .form .inputs .inputDescription textarea{
+    padding: 5px;
+    background: #9a9a9a70;
+    color: #e58f27;
+    border-radius: 5px;
+    box-shadow: 4px 6px 20px 1px rgba(0,0,0,0.37);
+    min-width: 90%;
+    min-height: 100px;
+    max-width: 350px;
+    max-height: 100px;
+}
+
+.container .create .form .inputs .dynamic{
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container .create .form .inputs .dynamic label{
+    height: 20%;
+    margin-bottom: 10px;
+    color: #9a9a9a;
+    font-weight: 200;
+}
+
+.container .create .form .inputs .dynamic .genres, .platforms{
+    margin: 5px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.container .create .form .inputs .dynamic .checkboxes{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container .create .form .inputs .dynamic .checkboxes label{
+    color: #fbfbfb;
+    font-size: 15px;
+}
+
+.container .create .form .inputs .dynamic .checkboxes label input{
+    margin-right: 5px;
+}
+
+.container .create .form .submit:disabled{
+    background-color: transparent;
+    border: 2px solid #c5c5c5;
+    color: #fbfbfb;
+}
+
+.container .create .form .submit{
+    transition: 0.3s;
+    margin-top: 20px;
+    width: 25%;
+    height: 7%;
+    padding: 5px;
+    font-weight: 300;
+    border-radius: 5px;
+    transform: scale(1.01);
+    border: 0px;
+    background-color: #E58E27;
+    color: #161a1e;
+}
+
+.container .create .form .submit:not(.submit:disabled):hover{
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.06);
+}
+
+.container .create img{
+    animation: init 2s;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to left,rgb(0, 0, 0),rgb(0, 0, 0),rgba(0, 0, 0, 0));
+}
+
+@keyframes init {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

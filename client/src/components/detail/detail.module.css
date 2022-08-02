@@ -1,0 +1,147 @@
+.container{
+    display: flex;
+    overflow-y: scroll;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 87vh;
+    z-index: 10;
+}
+
+.container .error{
+    animation: init 1s;
+    color: #fbfbfb;
+    font-size: 40px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .game_detail{
+    animation: init 3s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .game_detail .cover{
+    width: 50%;
+    height: 100%;
+}
+
+.container .game_detail .cover img{
+    transition: 0.3s;
+    mask-image: linear-gradient(to right, rgb(0, 0, 0),rgb(0, 0, 0),rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.container .game_detail .data{
+    padding: 20px;
+    width: 50%;
+    height: 93%;
+}
+
+.container .game_detail .data .name{
+    padding-left: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container .game_detail .data .name h3{
+    font-size: 30px;
+    color: #fbfbfb;
+}
+
+.container .game_detail .data .name span{
+    font-size: 14px;
+    color: #9a9a9a;
+    padding-left: 20px;
+}
+
+.container .game_detail .data .info{
+    padding-left: 15px;
+    padding-top: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container .game_detail .data .info .platforms{
+    padding-right: 10px;
+    color: #9a9a9a;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .game_detail .data .info p{
+    padding-left: 10px;
+}
+
+.container .game_detail .data .info .genres{
+    padding-left: 10px;
+    color: #9a9a9a;
+    font-size: 14px;
+    border-left: 1px solid #9a9a9a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .game_detail .data .description{
+    padding-left: 10px;
+    padding-top: 50px;
+    padding-inline: 30px;
+    color: #9a9a9a;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.container .game_detail .data .lastInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .game_detail .data .lastInfo .rating{
+    padding-left: 20px;
+    padding-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container .game_detail .data .lastInfo .rating img{
+    width: 50px;
+}
+
+.container .game_detail .data .lastInfo  .rating h3{
+    color: #E58E27;
+}
+
+.container .game_detail .data .lastInfo .release p{
+    color: #fbfbfb;
+    width: 100px;
+    padding-right: 20px;
+    padding-top: 50px;
+}
+
+@keyframes init {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

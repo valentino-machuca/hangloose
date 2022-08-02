@@ -1,0 +1,55 @@
+
+.container{
+    animation: init 4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 85vh;
+}
+
+  .container .text h1 {
+    color: #d0d0d0;
+    font-size: 72px;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .container .text p {
+    color: #d0d0d0;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 200;
+  }
+
+  .container .torch {
+    margin: -250px 0 0 -250px;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 0 9999em #000000f7;
+    opacity: 1;
+    border-radius: 50%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .container .torch:after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    box-shadow: inset 0 0 40px 2px #000, 0 0 20px 4px rgba(13, 13, 10, 0.2);
+  }
+
+
+  @keyframes init{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+  }

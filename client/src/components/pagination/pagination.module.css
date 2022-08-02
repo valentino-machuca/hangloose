@@ -1,0 +1,90 @@
+.error{
+    animation: init 1s;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fbfbfb;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.pagination{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.pagination h3{
+    animation: init 1s;
+    font-weight: 200;
+    font-size: 26px;
+}
+
+.pagination .controllers{
+    animation: init 3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    width: 100%
+}
+
+.pagination .controllers .prev{
+    transition: 0.3s;
+    padding: 5px;
+    margin-right: 20px;
+    color: #E58E27;
+    border-radius: 10px;
+}
+
+.pagination .controllers .prev:hover{
+    transition: 0.3s;
+    background-color:#E58E27 ;
+    color: #222222;
+    cursor: pointer;
+}
+
+.pagination .controllers .currentPage{
+    color: #fbfbfb;
+}
+
+.pagination .controllers .next{
+    transition: 0.3s;
+    padding: 5px;
+    margin-left: 20px;
+    color: #E58E27;
+    border-radius: 10px;
+}
+
+.pagination .controllers .next:hover{
+    transition: 0.3s;
+    background-color:#E58E27 ;
+    color: #222222;
+    cursor: pointer;
+}
+
+
+.pagination .gamesContainer{
+    color: #fbfbfb;
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes init {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
