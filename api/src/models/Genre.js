@@ -16,4 +16,5 @@ module.exports = (sequelize) => {
         tableName: 'Genres',
         timestamps: false
     });
+
 };

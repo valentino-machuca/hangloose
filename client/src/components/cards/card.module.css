@@ -84,10 +84,12 @@
 
 .card .link .info .platforms p{
     width: auto;
+    font-size: 12px;
     padding-right: 10px;
 }
 
 .card .link .info .genres p{
+    font-size: 12px;
     padding-right: 5px;
 }
 

@@ -21,7 +21,8 @@ let getApiGames = async() => {
                 name: g.name,
                 bg_img: g.background_image,
                 rating: g.rating,
-                platforms: g.parent_platforms.map(p => p.platform.name),
+                // platforms: g.parent_platforms.map(p => p.platform.name),
+                platforms: g.platforms.map(p => p.platform.name),
                 genres: g.genres.map(g => g.name),
                 isDb: false,
             }
@@ -83,6 +84,19 @@ let getAllGames = async () =>{
     }catch(e){
         throw new Error(e);
     }
+
+    // let games = getApiGames()
+    // .then(dataApi => {
+    //     return getDbGames()
+    //     .then(dataDb => {
+    //         return [...dataApi, ...dataDb];
+    //     })
+    // })
+    // .then(games => {
+    //     return games;
+    // })
+    // .catch((e) => throw new Error(e));
+    // return games;
 }
 
 
@@ -115,8 +129,56 @@ route.get('/', async (req, res) => { //Endpoint para llamar a la api y db.
     }catch(e){
         res.status(400).send({error: e});
     }
+
+//     let promise = new Promise((resolve, reject) => {
+//         let response = getAllGames();
+//        if(response){
+//            resolve(response);
+//        }else{
+//            reject('Error al conseguir la data');
+//        }
+//    })
+
+//    promise
+//    .then(response =>{
+//        res.status(200).send(response.flat());
+//    })
+//    .catch(e => res.status(400).send({error: e}));
+
 });
 
+
+/*---------------------Put de prueba----------------------*/
+
+route.put('/', (req, res) => {
+    const {name, description, publisher, id} = req.body;
+
+    Videogame.findByPk(id)
+    .then((game) => {
+        game.update({
+            name,
+            description,
+            publisher,
+        }).then(gameUpdated => res.status(200).send(gameUpdated))
+    })
+    .catch(e => res.status(400).send(e));
+
+});
+
+/*--------------------------------------------------------*/
+
+/*--------------------Delete de prueba--------------------*/
+route.delete('/', (req, res) => {
+    const {id} = req.query;
+
+    Videogame.findByPk(id)
+    .then(game => {
+        return game.destroy();
+    })
+    .then(response => res.status(200).send(response))
+    .catch(e => res.status(400).send(e));
+});
+/*--------------------------------------------------------*/
 
 
 module.exports = route;

@@ -54,7 +54,7 @@ const getGame = async (id) => {
                 cover: responseApi.background_image,
                 bg: responseApi.background_image_additional,
                 rating: responseApi.rating,
-                platforms: responseApi.parent_platforms.map(p => p.platform.name),
+                platforms: responseApi.platforms.map(p => p.platform.name),
                 genres: responseApi.genres.map(g => g.name),
                 publisher: responseApi.publishers[0].name,
                 isDb: false,

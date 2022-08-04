@@ -19,11 +19,12 @@ const Create = () => {
     const genres = useSelector(store => store.genres);
     const platforms = useSelector(store => store.platforms);
 
+    /*Para reiniciar el estado creacion cada vez que inicia*/
     useEffect(() => {
         dispatch(createStatus(''));
     }, [dispatch]);
 
-    const [errors, setError] = useState({
+    const [errors, setError] = useState({ /*Estado para manejo de errores*/
         name: '',
         publisher: '',
         description: '',
@@ -31,7 +32,7 @@ const Create = () => {
         allowed: false,
     });
 
-    const [form, setForm] = useState({
+    const [form, setForm] = useState({  /*Estado de mi form controlado*/
         name: '',
         publisher: '',
         release: '',
@@ -42,7 +43,7 @@ const Create = () => {
         platforms: [],
     });
 
-    const handleValidate = (e) => {
+    const handleValidate = (e) => { //Evito nulls y caracteres no deseados.
         if(e.target.name === 'name'){
             if(!e.target.value){
                 setError({...errors, [e.target.name]: 'Required', allowed:false});
@@ -67,27 +68,27 @@ const Create = () => {
     }
 
     const handleChange = (e) => {
-        if(e.target.type === 'checkbox'){
-            if(e.target.checked){
+        if(e.target.type === 'checkbox'){ //handleChange para checkbox
+            if(e.target.checked){ //si se checkea un checkbox se agrega su id al arreglo de su estado
                 setForm({
                     ...form,
                     [e.target.name]: [...form[e.target.name], Number(e.target.value)]
                 })
             }else{
-                setForm({
+                setForm({ //si se quita el check lo elimina
                     ...form,
                     [e.target.name]: form[e.target.name].filter(d => d !== Number(e.target.value)),
                 })
             }
         }else{
-            setForm({
+            setForm({ //handleChange para inputs que no se validan.
                 ...form,
                 [e.target.name]:e.target.value,
             });
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => { //Al submitear se despacha y se limpia
         e.preventDefault();
         dispatch(createGame(form));
         setForm({
@@ -105,7 +106,7 @@ const Create = () => {
 
   return (
     <>
-    <Nav/>
+    <Nav/> {/* nav component */}
     <div className={s.container}>
     <div className={s.create}>
             <form className={s.form} onSubmit={(e) => handleSubmit(e)}>
@@ -180,7 +181,7 @@ const Create = () => {
                     </div>
                 </div>
                 <input type="submit" value='Create' className={s.submit} disabled={(form.name && form.publisher && form.description && form.rating) ? !errors.allowed : true}/>
-                {status ? <p className={s.status}>{status}</p> : <p></p>}
+                {status ? <p className={s.status}>&#128172;{status}</p> : <p></p>}
             </form>
             <img src={img_create} alt="img_create" className={s.image}/>
     </div>

@@ -69,14 +69,11 @@ export function createStatus(payload){
 
 //llamar juegos.
 export function getGames(){
-    return async (dispatch) => {
+    return (dispatch) => {
         dispatch(getData());
-        try{
-            let response = await axios.get('/videogames');
-            dispatch(recieveGames(response.data));
-        }catch(e){
-            dispatch(recieveGames(e));
-        }
+        axios.get('/videogames')
+        .then((response) => dispatch(recieveGames(response.data)))
+        .catch(e => dispatch(recieveGames(e)))
     }
 }
 
@@ -98,6 +95,7 @@ export function getPlatforms(){
     return async (dispatch) => {
         try{
             let response = await axios.get(`/platforms`);
+            console.log(response);
             dispatch(recievePlatforms(response.data));
         }catch(e){
             dispatch(recievePlatforms(e.message));
@@ -125,7 +123,7 @@ export function createGame(data){
             await axios.post(`/videogames`, data);
             dispatch(createStatus('Game has been created'));
         }catch(e){
-            dispatch(createStatus('Something was wrong, try again.'));
+            dispatch(createStatus(`Something was wrong, please try again.`));
         }
     }
 }

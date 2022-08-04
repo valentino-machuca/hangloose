@@ -9,21 +9,22 @@ export default function Pagination({games}){
 
     //paginado
     const ITEMS_PER_PAGE = 15; //items por pagina
-    const [itemsPage, setItemsPage] = useState([]);
-    const [currentPage, setCurrentPage] = useState(0);
+    const [itemsPage, setItemsPage] = useState([]); //Items que se van a mostrar en la pagina actual
+    const [currentPage, setCurrentPage] = useState(0); //Pagina actual
 
     useEffect(() => {
-        if(games.response){
+        if(games.response){ //Error si no puede traer juegos
             return;
         }else{
-            setItemsPage([...games].splice(0, ITEMS_PER_PAGE));
+            setCurrentPage(0);
+            setItemsPage([...games].splice(0, ITEMS_PER_PAGE)); //Setea los juegos de la primer pagina
         }
     }, [games]);
 
     const nextHandler = () =>{
         const total = games.length;
         const nextPage = currentPage + 1;
-        const initialIndex = nextPage * ITEMS_PER_PAGE;
+        const initialIndex = nextPage * ITEMS_PER_PAGE; //Proxima posicion donde comienza a traer juegos
 
         if(initialIndex >= total) return; //Significa que estoy en mi ultima pagina y no deberia continuar a paginas que no existen.
 
