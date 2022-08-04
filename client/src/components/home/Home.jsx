@@ -25,16 +25,19 @@ class Home extends React.Component{
         return(
             <>
             <Nav/>
-            <div className={s.home}>
-                <div className={s.filters}>
-                    <Filters />
-                </div>
+                <div className={s.home}>
+                {this.props.loading ? <Loader /> : (
+                    <>
+                    <div className={s.filters}>
+                        <Filters />
+                    </div>
 
-                <div className={s.container}>
-                        {
-                            this.props.loading ? <Loader /> : <Pagination games={this.props.games}/>
-                        }
-                </div>
+                    <div className={s.container}>
+                        <Pagination games={this.props.games}/>
+                    </div>
+                    </>
+                )
+            }
             </div>
             </>
         );

@@ -4,7 +4,7 @@ import './loader.css';
 //Loader de carga
 export default function Loader(){
     return (
-        <>
+        <div className="all">
         <div className='loader'>
             <svg viewBox="0 0 80 80">
                 <circle id="test" cx="40" cy="40" r="32"></circle>
@@ -22,6 +22,6 @@ export default function Loader(){
                 <rect x="8" y="8" width="64" height="64"></rect>
             </svg>
         </div>
-        </>
+        </div>
     );
 }
